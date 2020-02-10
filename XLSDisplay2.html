@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  width: 90px;
+  height: 90px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#table {
+  display: none;
+  text-align: center;
+}
+</style>
+
+<link rel="stylesheet" href="css/jsuites.css" type="text/css" />
+<link rel="stylesheet" href="css/jexcel.css" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/textarea.css"/> 
+<script src="app/jexcel.js"></script>
+<script src="app/jsuites.js"></script>
+<script src="app/jquery.min.js"></script>
+<script src="app/jquery.csv.js"></script>
+<script src="app/jquery.csv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+</head>
+<body onload="myFunction()" style="margin:0;">
+<table width=100% border=0px>
+      <tr>
+      <td align="left"> <img src="images/FCA Logo.jpg" alt="FCA logo" height=50 width=100></td>
+      </tr>
+</table>
+<!--  <div>
+    <div id='log' style='background-color:#c7eaff; border-radius:2px; color:#000; padding:20px'></div>
+</div> -->
+<div id="loader"></div>
+<div id="table" style="display:none; position: absolute; left:40px; right:0px; top:5px;"></div>
+<table><tr><td align="center">
+<div id="buttons" style="position: absolute; left:10px; right:0px; top:695px;">
+    <input type="button" onClick="window.location.href = '/Monroney/Index.html';" value="Home"  class="btn btn-primary btn-xl"/>
+    <button id='save' name='save' class="btn btn-primary btn-xl">Save Changes</button>
+    <button type="button" name="download" id="download" class="btn btn-primary btn-xl">Export To CSV </button>
+<!-- <button onclick="$('#log').html('')" class="btn btn-danger btn-xl">Clear Log</button>  --> 
+	<button id='preview' class="btn btn-primary btn-xl">Preview Monroney</button>
+	<button id='bulkpdf' name='bulkpdf' class="btn btn-danger btn-xl">Dowload Selected to PDF</button>
+</div>
+</td></tr></table>
+<textarea id="data1" name="data11" cols="20" rows="20" style="display:none;"> </textarea>
+</body>
+<script src="app/XLSDisp.js"></script>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("table").style.display = "block";
+}
+</script>
+</html>

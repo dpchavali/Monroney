@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<script src="app/jquery.min.js"></script>
+<script src="app/Index.js"></script>
+<body>
+<table>
+      <tr>
+      <td align="left"> <img src="images/FCA Logo.jpg" alt="FCA logo" border=3 height=50 width=100></td>
+      </tr>
+</table>
+
+<table width="100%">
+	<tr>
+		<td align="left" bgcolor="364f6b" style="color:#f5f5f5"><strong>Home</strong></td>		
+		<td align="right" bgcolor="364f6b" style="color:#f5f5f5">
+	</tr>
+</table>
+
+<table style="height:50px;" align="center" width=100% border=0px>
+      <tr>
+      <td align="center" style="color:#384259;font-size:35px;"><b>Monroney Header Maintenance</b></td>
+      </tr>
+</table>
+
+<br><br>
+<table style="height:200px;" align="center" width=100% border=0px>
+<tr>
+<td align="center">
+ <div>
+    <form method="post" id="uploadform" enctype="multipart/form-data">
+        <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Select File <input type="file" id="file" name="file" accept=".csv" onchange="checkfile(this);"/>
+                    </span>
+                </label>
+        </div>
+    </form>
+ </div></td></tr>
+ <tr>
+ <td align="center">
+ <input type="button" id='upload' name="upload"  value="Upload New CSV"  class="btn btn-primary btn-xl" />
+  <input type="button" onClick="window.location.href = '/Monroney/XLSDisplay2.html';" value="Edit Existing CSV"  class="btn btn-primary btn-xl"/>
+  <input type="submit" id="transmit" name="transmit" value="Transmit CSV To ADDC"  class="btn btn-danger btn-xl" />  
+  <form method="post" id="ftpform" enctype="multipart/form-data"></form>
+  </td>
+  </tr>
+  </table>
+ </body>
+</html>

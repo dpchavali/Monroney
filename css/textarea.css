@@ -1,0 +1,18 @@
+
+.txt {
+  border-color: #EEEEEE;
+  border-style: solid;
+  border-width: 1px;
+  width: 43%;
+  min-height: 20px;
+  padding: 5px;
+  /*margin-top: -1px;*/
+
+  /* Text style */
+  font-family: Times-Italic;
+  font-size: 19px;
+  line-height: 29px;
+  text-align: left;
+  resize: none;
+};
+

@@ -1,0 +1,23 @@
+.header img {
+  float: left;
+  width: 200px;
+  height: 100px;
+  background: #555;
+  margin: auto;
+}
+
+.header h1 {
+  position: fixed;
+  left: 29%;
+  top: 10px;
+}
+
+.centered {
+  position: fixed;
+  width: 30%;
+  padding: 10px;
+  top: 40%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -100px;
+}

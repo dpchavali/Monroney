@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Monroney Label</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/textarea.css"/> 
+    <script src="app/jquery.min.js"></script>
+    <script src="app/html2canvas.js"></script>
+	<script src="app/jspdf.debug.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet">
+ </head>
+    <body onload='startup();'>
+     <div id='pdfimage'>
+         <canvas id="canvas" style="position: absolute; left: 10px; top: 50px;" width="1700" height="1100"></canvas>
+         <div id="txtmodl" style="position: absolute;">
+            <textarea id="mody" name="mody1" class="txt" readonly></textarea>
+          </div>
+          <div id="txtdiv" style="position: absolute;  left:165px; right:0px; top:95px;">
+      		<textarea id="head" name="head1" class="txt" readonly></textarea>
+          </div>
+     </div>
+          <div style="text-align: center; border: 1px solid">
+          <input type="button" id='pdf' name="pdf"  value="Download to PDF"  class="btn btn-primary btn-xl" />
+          </div>
+    </body>
+    <script src="app/Image.js"></script>
+</html>
+
+
