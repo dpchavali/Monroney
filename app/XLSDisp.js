@@ -138,7 +138,7 @@ $('#preview').on('click', function (){
 	else
 		{
 		// $('#log').append('Current Row Data ' + currowdat + '<br>');
-		 url = 'http://localhost:8080/Monroney/Image.html?currowdesc=' + encodeURIComponent(currowdesc) + 
+		 url = '/Monroney/Image.html?currowdesc=' + encodeURIComponent(currowdesc) + 
 		                                                 '&currowbrnd='+ encodeURIComponent(currowbrnd) +
 		                                                 '&currowdesc2='+ encodeURIComponent(currowdesc2) +
 		                                                 '&currowfont='+ encodeURIComponent(currowfont) +
