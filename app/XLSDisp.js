@@ -249,9 +249,165 @@ function createcanvs(value)
     
 function addpdf(value, index){
 	var imgData = document.getElementById(value).toDataURL("image/jpeg", 1.0);
+	var crow  = 'F' + value.substring(1,value.length);
+	var cdesc1 = 'I' + value.substring(1,value.length);
+	var cdesc2 = 'L' + value.substring(1,value.length);
+	var seri = 'A' + value.substring(1,value.length);
+	var fnt = 'H' + value.substring(1,value.length);
+	var seris = document.getElementById('table').jexcel.getValue(seri);
+	var brnd = document.getElementById('table').jexcel.getValue(crow);
+	var desc1 = document.getElementById('table').jexcel.getValue(cdesc1);
+	var desc2 = document.getElementById('table').jexcel.getValue(cdesc2);
+	var font = document.getElementById('table').jexcel.getValue(fnt);
+	var desc, serisn;
+	var thpt, thpl, tmpt, tmpl;
 	if (index > 0){ doc.addPage();}
     doc.addImage(imgData, 'JPEG', 0, 0);
-    doc.text(currowdesc, 180, 90);
+  
+    if (desc2 > ' '){
+    	desc = desc1 + ' ' + desc2;
+    	if (brnd = 'A11') {desc = desc1 + '\n' + desc2;}
+    }
+    else {
+    	desc = desc1;
+    }
+    
+    if(seris == 'H'){
+    	serisn = '2017';
+    }
+    if(seris == 'J'){
+    	serisn = '2018';
+    }
+    if(seris == 'K'){
+    	serisn = '2019';
+    }
+    if(seris == 'L'){
+    	serisn = '2020';
+    }
+    if(seris == 'M'){
+    	serisn = '2021';
+    }
+    if(seris == 'N'){
+    	serisn = '2022';
+    }
+    if(seris == 'P'){
+    	serisn = '2023';
+    }
+    if(seris == 'R'){
+    	serisn = '2024';
+    }
+    if(seris == 'S'){
+    	serisn = '2025';
+    }
+    if(seris == 'T'){
+    	serisn = '2026';
+    }
+    if(seris == 'V'){
+    	serisn = '2027';
+    }
+    if(seris == 'W'){
+    	serisn = '2028';
+    }
+    if(seris == 'X'){
+    	serisn = '2029';
+    }
+    if(seris == 'Y'){
+    	serisn = '2030';
+    }
+    if(seris == '1'){
+    	serisn = '2031';
+    }
+    if(seris == '2'){
+    	serisn = '2032';
+    }
+    if(seris == '3'){
+    	serisn = '2033';
+    }
+    if(seris == '4'){
+    	serisn = '2034';
+    }
+    if(seris == '5'){
+    	serisn = '2035';
+    }
+    if(seris == '6'){
+    	serisn = '2036';
+    }
+    if(seris == '7'){
+    	serisn = '2037';
+    }
+    if(seris == '8'){
+    	serisn = '2038';
+    }
+    if(seris == '9'){
+    	serisn = '2039';
+    }
+    	
+    if (brnd == 'A14'){
+    	thpl = 130;
+    	thpt = 90;
+    	tmpl = 130;
+    	tmpt = 60;
+    	doc.setFont('Helvetica');
+	    doc.setFontStyle('BoldOblique');
+	    doc.setFontSize(font.substring(1,3));
+	    doc.text(desc, thpl, thpt);
+	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+    }
+    if (brnd == 'A08'){
+    	thpl = 170;
+    	thpt = 90;
+    	tmpl = 170;
+    	tmpt = 45;
+    	console.log(doc.getFontList());
+    	doc.setFont('helvetica');
+	    doc.setFontStyle('bold');
+	    doc.setFontSize(font.substring(1,3));
+	    doc.text(desc, thpl, thpt);
+	    doc.setFontSize(22);
+	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+    }
+    if (brnd == 'A18'){
+    	thpl = 155;
+    	thpt = 70;
+    	tmpl = 155;
+    	tmpt = 105;
+    	console.log(doc.getFontList());
+    	doc.setFont('helvetica');
+	    doc.setFontStyle('bold');
+	    doc.setFontSize(font.substring(1,3));
+	    doc.text(desc, thpl, thpt);
+	    doc.setFontSize(20);
+	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+    }
+    if (brnd == 'A11'){
+    	thpl = 335;
+    	thpt = 70;
+    	tmpl = 315;
+    	tmpt = 55;
+    	console.log(doc.getFontList());
+    	doc.setFont('helvetica');
+	    doc.setFontStyle('bold');
+	    doc.setFontSize(font.substring(1,3));
+	    doc.text(desc, thpl, thpt);
+	    doc.setFontSize(18);
+	    doc.text(serisn.substring(0,1), tmpl, tmpt);
+	    doc.text(serisn.substring(1,2), tmpl, tmpt+15);
+	    doc.text(serisn.substring(2,3), tmpl, tmpt+30);
+	    doc.text(serisn.substring(3,4), tmpl, tmpt+45);
+    }
+    if (brnd == 'A16'){
+    	thpl = 155;
+    	thpt = 70;
+    	tmpl = 155;
+    	tmpt = 105;
+    	console.log(doc.getFontList());
+    	doc.setFont('helvetica');
+	    doc.setFontStyle('bold');
+	    doc.setFontSize(font.substring(1,3));
+	    doc.text(desc, thpl, thpt);
+	    doc.setFontSize(20);
+ 	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+    }
  //   alert(currowdesc);
 }
 
