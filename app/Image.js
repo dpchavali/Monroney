@@ -86,6 +86,7 @@
               if(seris == '9'){
             	  tm.innerHTML = '2039';
               }
+              
               if (frmt == '2'){
 	              th.innerHTML = decodeURI(desc + ' ' + desc2);
 	              if (brnd == 'A11') {
@@ -93,7 +94,7 @@
 	              }
               }
               else {
-            	  th.innerHTML = desc;
+            	  th.innerHTML = unescape(desc);
               }
               th.style["font-size"] = "29px";
                 var td = document.getElementById('txtdiv');
@@ -102,7 +103,7 @@
                 var img = new Image();
                 var imgsrc;
                 if ( brnd == 'A08'){
-                	imgsrc = 'images/JEEPB.jpg';
+                	imgsrc = 'images/JEEPB.jpeg';
                 	td.style.left = '230px';
                 	td.style.top = '140px';
                 	th.style.width = '47%';
@@ -120,7 +121,7 @@
                  }
                 
                 if ( brnd == 'A11'){
-                	imgsrc = 'images/CHRYSLERB.jpg';
+                	imgsrc = 'images/CHRYSLERB.jpeg';
                 	td.style.left = '470px';
                 	td.style.top = '111px';
                 	th.style.width = '43%';
@@ -138,7 +139,7 @@
                 }
                 
                 if ( brnd == 'A14'){
-                	imgsrc = 'images/RAMB.jpg';
+                	imgsrc = 'images/RAMB.jpeg';
                 	td.style.left = '174px';
                 	td.style.top = '139px';
                 	th.style.width = '56%';
@@ -156,9 +157,9 @@
                 }
                 
                 if ( brnd == 'A15'){
-                	imgsrc = 'images/DODGEB.jpg';
+                	imgsrc = 'images/DODGEB.jpeg';
                 	td.style.left = '130px';
-                	td.style.top = '111px';
+                	td.style.top = '140px';
                 	th.style.width = '50%';
                 	th.style["line-height"] = "15px";
                 	th.style["font-family"] = "Arial Black";
@@ -175,7 +176,7 @@
                 }
                 
                 if ( brnd == 'A16'){
-                	imgsrc = 'images/FIATB.jpg';
+                	imgsrc = 'images/FIATB.jpeg';
                    	td.style.left = '200px';
                 	td.style.top = '119px';
                 	th.style["font-family"] = "Arial Black";
@@ -191,7 +192,7 @@
                 }
                 
                 if ( brnd == 'A18'){
-                	imgsrc = 'images/ALFAB.jpg';
+                	imgsrc = 'images/ALFAB.jpeg';
                 	td.style.left = '200px';
                 	td.style.top = '121px';
                 	th.style.width = '49%';
@@ -223,17 +224,6 @@
     		    var thpt, thpl, tmpt, tmpl;
     		    doc.addImage(imgData, 'JPEG', 0, 0);
     		    console.log(doc.getFontList());
-    		    if (brnd == 'A14'){
-    		    	thpl = 130;
-    		    	thpt = 90;
-    		    	tmpl = 130;
-    		    	tmpt = 60;
-    		    	doc.setFont('Helvetica');
-        		    doc.setFontStyle('BoldOblique');
-        		    doc.setFontSize(font.substring(1,3));
-        		    doc.text(document.getElementById('head').value, thpl, thpt);
-        		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-    		    }
     		    if (brnd == 'A08'){
     		    	thpl = 170;
     		    	thpt = 90;
@@ -246,18 +236,7 @@
         		    doc.setFontSize(22);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
     		    }
-    		    if (brnd == 'A18'){
-    		    	thpl = 155;
-    		    	thpt = 70;
-    		    	tmpl = 155;
-    		    	tmpt = 105;
-    		    	doc.setFont('helvetica');
-        		    doc.setFontStyle('Bold');
-        		    doc.setFontSize(font.substring(1,3));
-        		    doc.text(document.getElementById('head').value, thpl, thpt);
-        		    doc.setFontSize(20);
-        		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-    		    }
+    		    
     		    if (brnd == 'A11'){
     		    	thpl = 335;
     		    	thpt = 70;
@@ -273,6 +252,35 @@
         		    doc.text(document.getElementById('mody').value.substring(2,3), tmpl, tmpt+30);
         		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
     		    }
+    		    
+    		    if (brnd == 'A14'){
+    		    	thpl = 130;
+    		    	thpt = 90;
+    		    	tmpl = 130;
+    		    	tmpt = 60;
+    		    	doc.setFont('Helvetica');
+        		    doc.setFontStyle('BoldOblique');
+        		    doc.setFontSize(font.substring(1,3));
+        		    doc.text(document.getElementById('head').value, thpl, thpt);
+        		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
+    		    }
+    		    
+    		    if (brnd == 'A15'){
+    		    	thpl = 85;
+    		    	thpt = 95;
+    		    	tmpl = 68;
+    		    	tmpt = 58;
+    		    	doc.setFont('helvetica');
+        		    doc.setFontStyle('Bold');
+        		    doc.setFontSize(font.substring(1,3));
+        		    doc.text(document.getElementById('head').value, thpl, thpt);
+        		    doc.setFontSize(18);
+        		    doc.text(document.getElementById('mody').value.substring(0,1), tmpl, tmpt);
+        		    doc.text(document.getElementById('mody').value.substring(1,2), tmpl, tmpt+15);
+        		    doc.text(document.getElementById('mody').value.substring(2,3), tmpl, tmpt+30);
+        		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
+    		    }
+    		    
     		    if (brnd == 'A16'){
     		    	thpl = 155;
     		    	thpt = 70;
@@ -285,5 +293,20 @@
         		    doc.setFontSize(20);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
     		    }
+    		    
+    		    if (brnd == 'A18'){
+    		    	thpl = 155;
+    		    	thpt = 70;
+    		    	tmpl = 155;
+    		    	tmpt = 105;
+    		    	doc.setFont('helvetica');
+        		    doc.setFontStyle('Bold');
+        		    doc.setFontSize(font.substring(1,3));
+        		    doc.text(document.getElementById('head').value, thpl, thpt);
+        		    doc.setFontSize(20);
+        		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
+    		    }
+    		    
+    		    
     	    doc.save('sample-file.pdf');
     	});

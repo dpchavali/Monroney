@@ -65,8 +65,8 @@
 <script src="app/jquery.min.js"></script>
 <script src="app/jquery.csv.js"></script>
 <script src="app/jquery.csv.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="app/html2canvas.js"></script>
+<script src="app/jspdf.debug.js"></script>
 </head>
 <body onload="myFunction()" style="margin:0;">
 <table width=100% border=0px>
@@ -78,7 +78,7 @@
     <div id='log' style='background-color:#c7eaff; border-radius:2px; color:#000; padding:20px'></div>
 </div> -->
 <div id="loader"></div>
-<div id="table" style="display:none; position: absolute; left:40px; right:0px; top:5px;"></div>
+<div id="table" style="display:none; position: absolute; left:10px; right:0px; top:5px;"></div>
 <table><tr><td align="center">
 <div id="buttons" style="position: absolute; left:10px; right:0px; top:695px;">
     <input type="button" onClick="window.location.href = '/Monroney/Index.html';" value="Home"  class="btn btn-primary btn-xl"/>
@@ -86,7 +86,7 @@
     <button type="button" name="download" id="download" class="btn btn-primary btn-xl">Export To CSV </button>
 <!-- <button onclick="$('#log').html('')" class="btn btn-danger btn-xl">Clear Log</button>  --> 
 	<button id='preview' class="btn btn-primary btn-xl">Preview Monroney</button>
-	<button id='bulkpdf' name='bulkpdf' class="btn btn-danger btn-xl">Dowload Selected to PDF</button>
+	<button id='bulkpdf' name='bulkpdf' class="btn btn-danger btn-xl">Generate PDF</button>
 </div>
 </td></tr></table>
 <textarea id="data1" name="data11" cols="20" rows="20" style="display:none;"> </textarea>

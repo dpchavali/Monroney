@@ -8,12 +8,10 @@ var currowspcl;
 var currowfrmt;
 var currowsris;
 var cboxarry = [];
-//var data1 = $("data1");
-
 
 var selectionActive = function(instance, x1, y1, x2, y2, origin) {
-    var cellName1 = jexcel.getColumnNameFromId([x1, y1]);
-    var cellName2 = jexcel.getColumnNameFromId([x2, y2]);
+ //   var cellName1 = jexcel.getColumnNameFromId([x1, y1]);
+ //   var cellName2 = jexcel.getColumnNameFromId([x2, y2]);
   //  $('#log').append('The selection from ' + cellName1 + ' to ' + cellName2 + '<br>');
       currdata1 = document.getElementById('table').jexcel.getValueFromCoords(x1, y1);
       currowdat = document.getElementById('table').jexcel.getRowData(y1);
@@ -54,7 +52,7 @@ var changed = function(instance, cell, x, y, value, oldValue) {
       if(value == true){
     	  cboxarry.push(cellName);
           mySpreadsheet.setStyle(cellName, 'background-color', 'orange');
-//          console.log(cboxarry);
+ //       console.log(cboxarry);
       }
       if(value == false){
     	  const index = cboxarry.indexOf(cellName);
@@ -62,7 +60,7 @@ var changed = function(instance, cell, x, y, value, oldValue) {
     		  cboxarry.splice(index, 1);
     	  }
  //         mySpreadsheet.setStyle(cellName, 'background-color', 'green');
-//	      console.log(cboxarry);
+	//      console.log(cboxarry);
 	      }
     }
 
@@ -80,6 +78,7 @@ var mySpreadsheet = jexcel(document.getElementById('table'), {
     allowDeleteRow:false,
     allowDeleteColumn:false,
     allowRenameColumn:false,
+    allowInsertRow:false,
     about:false,
     includeHeadersOnDownload:true,
     tableHeight:'570px',
@@ -100,6 +99,7 @@ var mySpreadsheet = jexcel(document.getElementById('table'), {
         { type:'text', width:300},
         { type:'checkbox', title:'Create PDF', width:100},
       ],
+      
           
         onchange: changed,
         onselection: selectionActive,
@@ -178,10 +178,9 @@ $(document).ready(function(evt) {
 });
 
 
-var imgsrc = [];
 var doc = new jsPDF('l','pt','B3');
-var collator = new Intl.Collator(undefined, {numeric: false, sensitivity: 'base'});
-
+var imgsrc = [];
+var collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
 
 document.getElementById('bulkpdf').onclick = function () {
 	doc.setProperties({
@@ -190,54 +189,63 @@ document.getElementById('bulkpdf').onclick = function () {
 		  creator: 'FCA Shipping Application'
 		  });
 	if(cboxarry.length > 0){
-			cboxarry.sort(collator.compare).forEach(function cnvscreation(value, index, array){
-				createcanvs(value);
-				var crow = 'F' + value.substring(1,value.length);
-				var brnd = document.getElementById('table').jexcel.getValue(crow);
-		      
-				if ( brnd == 'A08'){
-					imgsrc.push('images/JEEPB.jpeg');
-		         }
-				
-		        if ( brnd == 'A11'){
-		        	imgsrc.push('images/CHRYSLERB.jpeg');
-		        }
-				
-		        if ( brnd == 'A14'){
-		        	imgsrc.push('images/RAMB.jpeg');
-		        }
-		        
-		        if ( brnd == 'A15'){
-		        	imgsrc.push('images/DODGEB.jpeg');
-		        }
-		        
-		        if ( brnd == 'A16'){
-		        	imgsrc.push('images/FIATB.jpeg');
-		        }
-		        
-		        if ( brnd == 'A18'){
-		        	imgsrc.push('images/ALFAB.jpeg');
-		         }
-			});
-			cboxarry.sort(collator.compare).forEach(function imgadd(value, index, array){
-				var img = new Image();
-				img.src = imgsrc[index];
-		        img.onload = function() {
-		         	var canvs = document.getElementById(value);
-		         	var ctx = canvs.getContext('2d');
-		           	ctx.translate(100, 100);
-		            ctx.drawImage(img, -100, -110, 1700, 1100);
-		            addpdf(value, index);
-		         }
-			});
+		cboxarry.sort(collator.compare);
+		var imglodn = 0;
+		cboxarry.forEach(function cnvscreation(value, index, array){
+			createcanvs(value);
+			var crow = 'F' + value.substring(1,value.length);
+			var brnd = document.getElementById('table').jexcel.getValue(crow);
+			if ( brnd == 'A08'){
+				imgsrc.push('images/JEEPB.jpg');
+				imglodn = imglodn + 1;
+	         }
+			
+	        if ( brnd == 'A11'){
+	        	imgsrc.push('images/CHRYSLERB.jpg');
+				imglodn = imglodn + 1;
+	        }
+			
+	        if ( brnd == 'A14'){
+	        	imgsrc.push('images/RAMB.jpg');
+				imglodn = imglodn + 1;
+	        }
+	        
+	        if ( brnd == 'A15'){
+	        	imgsrc.push('images/DODGEB.jpg');
+				imglodn = imglodn + 1;
+	        }
+	        
+	        if ( brnd == 'A16'){
+	        	imgsrc.push('images/FIATB.jpg');
+				imglodn = imglodn + 1;
+	        }
+	        
+	        if ( brnd == 'A18'){
+	        	imgsrc.push('images/ALFAB.jpg');
+				imglodn = imglodn + 1;
+	         }
+		});
+	
+		if (imglodn == cboxarry.length) {
+		cboxarry.sort(collator.compare);
+		cboxarry.forEach(function imgadd(value, index, array){
+			var img = new Image();
+			img.src = imgsrc[index];
+	        img.onload = function() {
+	         	var canvs = document.getElementById(value);
+	         	var ctx = canvs.getContext('2d');
+	           	ctx.translate(100, 100);
+	            ctx.drawImage(img, -100, -110, 1700, 1100);
+	            addpdf(value, index);
+  //          	$("#" + value + "").remove();
+	         }
+		});
 	}
+   }
 	else
-	{
+		{
 		alert('Please Select a Row');
 		}
-	
-//	setTimeout(savepdf,2000);
-	
 }
 
 var a = 1000;
@@ -255,12 +263,11 @@ function createcanvs(value)
 	canvas.style.top = a + 'px';
 	canvas.style.display="none";
 	body.appendChild(canvas);
-	a = a + 1000;
+	if(a == 20000){ a = 1000;}
+	else{a=a+1000;}
 }
-
     
 function addpdf(value, index){
-	
 	var imgData = document.getElementById(value).toDataURL("image/jpeg", 1.0);
 	var crow    = 'F' + value.substring(1,value.length);
 	var cdesc1  = 'I' + value.substring(1,value.length);
@@ -359,9 +366,9 @@ function addpdf(value, index){
     
     if (brnd == 'A08'){
     	thpl = 170;
-    	thpt = 75;
+    	thpt = 90;
     	tmpl = 170;
-    	tmpt = 40;
+    	tmpt = 45;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
@@ -401,8 +408,8 @@ function addpdf(value, index){
     if (brnd == 'A15'){
     	thpl = 85;
     	thpt = 95;
-    	tmpl = 65;
-    	tmpt = 48;
+    	tmpl = 68;
+    	tmpt = 58;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('Bold');
 	    doc.setFontSize(font.substring(1,3));
@@ -440,43 +447,40 @@ function addpdf(value, index){
 	    doc.setFontSize(20);
 	    doc.text(serisn + ' Model Year', tmpl, tmpt);
     }
-    console.log('added ' + value);
-    $("#" + value + "").remove();
-    if (doc.getNumberOfPages() > cboxarry.length){
-        savepdf();
-//  	alert(doc.getNumberOfPages() + ' ' + cboxarry.length);
-    	}
+    
+    if (doc.getNumberOfPages() > cboxarry.length){savepdf();}
+ //   alert(currowdesc);
 }
 
 function savepdf(){
-//	if (doc.getNumberOfPages() > cboxarry.length){
-	  doc.save('Bulk-file.pdf');
+//	  doc.save('Bulk-file.pdf');
+	  doc.output('save', 'Bulk-file.pdf');
+//	  window.confirm("Are you sure you want to download " + cboxarry.length + " images ?");
+//	  window.open(doc.output('bloburl'), '_blank');
 //	  doc.output('dataurlnewwindow');
-// 	  doc.output('save', 'filename.pdf');
-/* 	  var blobPDF = new Blob([doc.output('blob')], {type:'application/pdf'});
-// 	  const blobUrl = URL.createObjectURL(blobPDF);
-// 	  window.open(blobUrl);
-// 	 const a1 = document.createElement('a1');
-//     document.body.appendChild(a1);
-//     a1.href = blobUrl;
-     a1.download = 'bulk-file.pdf';
-     a1.click();
-     setTimeout(() => {
-       window.URL.revokeObjectURL(blobUrl);
-       document.body.removeChild(a1);
-     },1000); */
- 	  
- 	  
+ 	  a = 1000;
 	  cboxarry.forEach(function imgadd(value, index, array){
-	   	 mySpreadsheet.setStyle(value, 'background-color', 'green');
+		  mySpreadsheet.setStyle(value, 'background-color', 'green');
+//		  $("#" + value + "").remove();
+  //      console.log(cboxarry);
 	  });
 	  var arrlen = cboxarry.length;
 	  var imglen = imgsrc.length;
+	  console.log(imgsrc);
+	  console.log(cboxarry);
 	  for(var i = 0; i < arrlen; i++ ){
-			 mySpreadsheet.setValue(cboxarry[0], 0);
-		  }
-	  imgsrc.splice(0, imglen); 
+		 mySpreadsheet.setValue(cboxarry[0], 0);
+//		 if (cboxarry.length > 0){
+//		 cboxarry[0].value = '';
+//		 }
+	  }
+//	  for(var i = 0; i < imglen; i++ ){
+	  imgsrc.splice(0, imglen);
+//	  }
+
 	  doc = new jsPDF('l','pt','B3');
-//	}
+	  
+//		 var elems = document.body.getElementsByTagName("*");
+//       console.log(elems);
 }
 
