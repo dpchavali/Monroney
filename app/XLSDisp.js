@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var currdata1;	
 var currowdat;
 var currowdesc;
