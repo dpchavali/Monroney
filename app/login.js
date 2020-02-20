@@ -1,6 +1,6 @@
 $(document).ready(function(evt) {
       
-    $('#upload').click(function(evt) {
+    $('#Register').click(function(evt) {
     	evt.preventDefault();
     	if (document.getElementById("file").value != "")
     		{

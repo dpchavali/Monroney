@@ -7,6 +7,10 @@ var currowfont;
 var currowspcl;
 var currowfrmt;
 var currowsris;
+var currowsale;
+var currowmrkt;
+var currowbmdl;
+var currowsequ;
 var cboxarry = [];
 //var data1 = $("data1");
 
@@ -25,6 +29,10 @@ var selectionActive = function(instance, x1, y1, x2, y2, origin) {
       currowspcl = document.getElementById('table').jexcel.getValue('K'+z);
       currowfrmt = document.getElementById('table').jexcel.getValue('G'+z);
       currowsris = document.getElementById('table').jexcel.getValue('A'+z);
+      currowsale = document.getElementById('table').jexcel.getValue('E'+z);
+      currowmrkt = document.getElementById('table').jexcel.getValue('B'+z);
+      currowbmdl = document.getElementById('table').jexcel.getValue('C'+z);
+      currowsequ = document.getElementById('table').jexcel.getValue('D'+z);
   //  $('#log').append('The selection from ' + y1 + '<br>'); 
 }
 
@@ -144,7 +152,11 @@ $('#preview').on('click', function (){
 		                                                 '&currowfont='+ encodeURIComponent(currowfont) +
 		                                                 '&currowspcl='+ encodeURIComponent(currowspcl) +
 		                                                 '&currowfrmt='+ encodeURIComponent(currowfrmt) +
-		                                                 '&currowsris='+ encodeURIComponent(currowsris);
+		                                                 '&currowsris='+ encodeURIComponent(currowsris) +
+		                                                 '&currowsale='+ encodeURIComponent(currowsale) +
+		                                                 '&currowmrkt='+ encodeURIComponent(currowmrkt) +
+		                                                 '&currowbmdl='+ encodeURIComponent(currowbmdl) +
+		                                                 '&currowsequ='+ encodeURIComponent(currowsequ);
 		 //document.location.href = url;
 		 window.open(url, '_blank');
 		}
@@ -182,8 +194,8 @@ var imgsrc = [];
 var doc = new jsPDF('l','pt','B3');
 var collator = new Intl.Collator(undefined, {numeric: false, sensitivity: 'base'});
 
-
 document.getElementById('bulkpdf').onclick = function () {
+    document.getElementById("loader").style.display = "initial";
 	doc.setProperties({
 		  title: 'Monroney Report',
 		  author: 'Durgaprasad Chavali',
@@ -260,18 +272,19 @@ function createcanvs(value)
 
     
 function addpdf(value, index){
-	
 	var imgData = document.getElementById(value).toDataURL("image/jpeg", 1.0);
 	var crow    = 'F' + value.substring(1,value.length);
 	var cdesc1  = 'I' + value.substring(1,value.length);
 	var cdesc2  = 'L' + value.substring(1,value.length);
 	var seri    = 'A' + value.substring(1,value.length);
 	var fnt     = 'H' + value.substring(1,value.length);
+	var sls     = 'E' + value.substring(1,value.length);
 	var seris = document.getElementById('table').jexcel.getValue(seri);
 	var brnd  = document.getElementById('table').jexcel.getValue(crow);
 	var desc1 = document.getElementById('table').jexcel.getValue(cdesc1);
 	var desc2 = document.getElementById('table').jexcel.getValue(cdesc2);
 	var font  = document.getElementById('table').jexcel.getValue(fnt);
+	var slscd = document.getElementById('table').jexcel.getValue(sls);
 	var desc, serisn;
 	var thpt, thpl, tmpt, tmpl;
 	if (index == 0){ doc.addPage();}
@@ -362,12 +375,18 @@ function addpdf(value, index){
     	thpt = 75;
     	tmpl = 170;
     	tmpt = 40;
+    	tspl = 34;
+    	tspt = 490;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
 	    doc.text(desc, thpl, thpt);
 	    doc.setFontSize(22);
 	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+	    doc.setFontSize(11);
+	    if (slscd > ' '){
+	    doc.text(slscd,tspl,tspt);
+	    }
     }
     
     if (brnd == 'A11'){
@@ -375,6 +394,8 @@ function addpdf(value, index){
     	thpt = 70;
     	tmpl = 315;
     	tmpt = 55;
+    	tspl = 330;
+    	tspt = 355;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
@@ -384,6 +405,10 @@ function addpdf(value, index){
 	    doc.text(serisn.substring(1,2), tmpl, tmpt+15);
 	    doc.text(serisn.substring(2,3), tmpl, tmpt+30);
 	    doc.text(serisn.substring(3,4), tmpl, tmpt+45);
+	    doc.setFontSize(10);
+	    if (slscd > ' '){
+		    doc.text(slscd,tspl,tspt);
+		    }
     }
     
     if (brnd == 'A14'){
@@ -391,11 +416,17 @@ function addpdf(value, index){
     	thpt = 90;
     	tmpl = 130;
     	tmpt = 60;
+    	tspl = 30;
+    	tspt = 668;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
 	    doc.text(desc, thpl, thpt);
 	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+	    doc.setFontSize(8);
+	    if (slscd > ' '){
+		    doc.text(slscd,tspl,tspt);
+		    }
     }
     
     if (brnd == 'A15'){
@@ -403,6 +434,8 @@ function addpdf(value, index){
     	thpt = 95;
     	tmpl = 65;
     	tmpt = 48;
+    	tspl = 330;
+    	tspt = 259;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('Bold');
 	    doc.setFontSize(font.substring(1,3));
@@ -413,6 +446,10 @@ function addpdf(value, index){
 	    doc.text(serisn.substring(1,2), tmpl, tmpt+15);
 	    doc.text(serisn.substring(2,3), tmpl, tmpt+30);
 	    doc.text(serisn.substring(3,4), tmpl, tmpt+45);
+	    doc.setFontSize(9);
+	    if (slscd > ' '){
+		    doc.text(slscd,tspl,tspt);
+		    }
     }
     
     if (brnd == 'A16'){
@@ -420,12 +457,18 @@ function addpdf(value, index){
     	thpt = 70;
     	tmpl = 155;
     	tmpt = 105;
+    	tspl = 330;
+    	tspt = 398;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
 	    doc.text(desc, thpl, thpt);
 	    doc.setFontSize(20);
  	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+	    doc.setFontSize(9);
+	    if (slscd > ' '){
+		    doc.text(slscd,tspl,tspt);
+		    }
     }
     
     if (brnd == 'A18'){
@@ -433,40 +476,31 @@ function addpdf(value, index){
     	thpt = 70;
     	tmpl = 155;
     	tmpt = 105;
+    	tspl = 330;
+    	tspt = 272;
     	doc.setFont('helvetica');
 	    doc.setFontStyle('bold');
 	    doc.setFontSize(font.substring(1,3));
 	    doc.text(desc, thpl, thpt);
 	    doc.setFontSize(20);
 	    doc.text(serisn + ' Model Year', tmpl, tmpt);
+	    doc.setFontSize(9);
+	    if (slscd > ' '){
+		    doc.text(slscd,tspl,tspt);
+		    }
     }
     console.log('added ' + value);
     $("#" + value + "").remove();
     if (doc.getNumberOfPages() > cboxarry.length){
+    	document.getElementById("loader").style.display = "none";
+        document.getElementById("table").style.display = "block";
         savepdf();
 //  	alert(doc.getNumberOfPages() + ' ' + cboxarry.length);
     	}
 }
 
 function savepdf(){
-//	if (doc.getNumberOfPages() > cboxarry.length){
 	  doc.save('Bulk-file.pdf');
-//	  doc.output('dataurlnewwindow');
-// 	  doc.output('save', 'filename.pdf');
-/* 	  var blobPDF = new Blob([doc.output('blob')], {type:'application/pdf'});
-// 	  const blobUrl = URL.createObjectURL(blobPDF);
-// 	  window.open(blobUrl);
-// 	 const a1 = document.createElement('a1');
-//     document.body.appendChild(a1);
-//     a1.href = blobUrl;
-     a1.download = 'bulk-file.pdf';
-     a1.click();
-     setTimeout(() => {
-       window.URL.revokeObjectURL(blobUrl);
-       document.body.removeChild(a1);
-     },1000); */
- 	  
- 	  
 	  cboxarry.forEach(function imgadd(value, index, array){
 	   	 mySpreadsheet.setStyle(value, 'background-color', 'green');
 	  });
@@ -477,6 +511,5 @@ function savepdf(){
 		  }
 	  imgsrc.splice(0, imglen); 
 	  doc = new jsPDF('l','pt','B3');
-//	}
 }
 
