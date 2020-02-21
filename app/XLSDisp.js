@@ -97,7 +97,7 @@ var mySpreadsheet = jexcel(document.getElementById('table'), {
         { type:'text', width:50,readOnly:true,},
         { type:'text', width:50,readOnly:true,},
         { type:'text', width:100,readOnly:true,},
-        { type:'text', width:50,readOnly:true,},
+        { type:'text', width:50,readOnly:false,},
         { type:'text', width:50,readOnly:true,},
         { type:'text', width:50,readOnly:true,},
         { type:'text', width:80,readOnly:true,},
