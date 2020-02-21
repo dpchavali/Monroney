@@ -286,7 +286,7 @@ function addpdf(value, index){
 	var font  = document.getElementById('table').jexcel.getValue(fnt);
 	var slscd = document.getElementById('table').jexcel.getValue(sls);
 	var desc, serisn;
-	var thpt, thpl, tmpt, tmpl;
+	var thpt, thpl, tmpt, tmpl, tspl, tspt;
 	if (index == 0){ doc.addPage();}
 	if (index > 0){ doc.addPage();}
 	doc.addImage(imgData, 'JPEG', 0, 0);
@@ -386,6 +386,12 @@ function addpdf(value, index){
 	    doc.setFontSize(11);
 	    if (slscd > ' '){
 	    doc.text(slscd,tspl,tspt);
+	    doc.setFillColor(255,255,0);
+	    doc.rect(314, 127, 45, 25, 'F');
+	    doc.setFontSize(20);
+	    tspl = 317;
+    	tspt = 145;
+    	doc.text(slscd,tspl,tspt);
 	    }
     }
     
@@ -408,14 +414,20 @@ function addpdf(value, index){
 	    doc.setFontSize(10);
 	    if (slscd > ' '){
 		    doc.text(slscd,tspl,tspt);
+		    doc.setFillColor(255,255,0);
+		    doc.rect(314, 127, 45, 25, 'F');
+		    doc.setFontSize(20);
+		    tspl = 317;
+	    	tspt = 145;
+		    doc.text(slscd,tspl,tspt);
 		    }
     }
     
     if (brnd == 'A14'){
     	thpl = 130;
-    	thpt = 90;
+    	thpt = 70;
     	tmpl = 130;
-    	tmpt = 60;
+    	tmpt = 45;
     	tspl = 30;
     	tspt = 668;
     	doc.setFont('helvetica');
@@ -426,6 +438,12 @@ function addpdf(value, index){
 	    doc.setFontSize(8);
 	    if (slscd > ' '){
 		    doc.text(slscd,tspl,tspt);
+		    doc.setFillColor(255,255,0);
+		    doc.rect(314, 127, 45, 25, 'F');
+		    doc.setFontSize(20);
+		    tspl = 317;
+	    	tspt = 145;
+	    	doc.text(slscd,tspl,tspt);
 		    }
     }
     
@@ -449,6 +467,12 @@ function addpdf(value, index){
 	    doc.setFontSize(9);
 	    if (slscd > ' '){
 		    doc.text(slscd,tspl,tspt);
+		    doc.setFillColor(255,255,0);
+		    doc.rect(314, 127, 45, 25, 'F');
+		    doc.setFontSize(20);
+		    tspl = 317;
+	    	tspt = 145;
+	    	doc.text(slscd,tspl,tspt);
 		    }
     }
     
@@ -468,6 +492,12 @@ function addpdf(value, index){
 	    doc.setFontSize(9);
 	    if (slscd > ' '){
 		    doc.text(slscd,tspl,tspt);
+		    doc.setFillColor(255,255,0);
+		    doc.rect(314, 127, 45, 25, 'F');
+		    doc.setFontSize(20);
+		    tspl = 317;
+	    	tspt = 145;
+	    	doc.text(slscd,tspl,tspt);
 		    }
     }
     
@@ -487,6 +517,12 @@ function addpdf(value, index){
 	    doc.setFontSize(9);
 	    if (slscd > ' '){
 		    doc.text(slscd,tspl,tspt);
+		    doc.setFillColor(255,255,0);
+		    doc.rect(314, 127, 45, 25, 'F');
+		    doc.setFontSize(20);
+		    tspl = 317;
+	    	tspt = 145;
+	    	doc.text(slscd,tspl,tspt);
 		    }
     }
     console.log('added ' + value);

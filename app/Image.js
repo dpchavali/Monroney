@@ -160,10 +160,7 @@
               }
               
               if (frmt == '2'){
-	          //    th.innerHTML = decodeURI(desc + ' ' + desc2);
-	            //  if (brnd == 'A11') {
-	            	  th.innerHTML = unescape(decodeURI(desc + '\n' + desc2));
-	            //  }
+            	  th.innerHTML = unescape(decodeURI(desc + '\n' + desc2));
               }
               else {
             	  th.innerHTML = unescape(desc);
@@ -190,13 +187,14 @@
                 	tm.style["font-family"] = "Arial Black";
                 	tm.style["font-size"] = "22px";
                  	tm.innerHTML =  tm.innerHTML + " Model Year";
-                	tsd.style.left = '49px';
-                	tsd.style.top = '694px';
-                	ts.style['line-height'] = '0px';
-                	ts.style.width = '22%';
-                	ts.style['font-size'] = '12px';
-               	    ts.style['text-align'] = 'right';
-                	ts.style['min-height'] = '15px';
+                	tsd.style.left = '428px';
+                	tsd.style.top = '225px';
+                	ts.style['line-height'] = '10px';
+                	ts.style.width = '23%';
+                	ts.style['font-size'] = '20px';
+               	  //  ts.style['text-align'] = 'bottom';
+                	ts.style['min-height'] = '20px';
+                	ts.style['background-color'] = 'yellow';
                 	    if (sale > ' '){
                 	    ts.innerHTML = sale;
                 	    }
@@ -220,13 +218,20 @@
                 	tm.style["writing-mode"] = "vertical-rl";
                 	tm.style["text-orientation"] = "upright";
                 	tm.style["font-size"] = "21px";
-               	    tsd.style.left = '441px';
+   /*            	    tsd.style.left = '441px';
                	    tsd.style.top = '512px';
                	    ts.style['line-height'] = '0px';
                	    ts.style.width = '22%';
                	    ts.style['font-size'] = '12px';
                	    ts.style['text-align'] = 'right';
-               	    ts.style['min-height'] = '15px';
+               	    ts.style['min-height'] = '15px'; */
+                	tsd.style.left = '428px';
+                	tsd.style.top = '225px';
+                	ts.style['line-height'] = '10px';
+                	ts.style.width = '20%';
+                	ts.style['font-size'] = '20px';
+                	ts.style['min-height'] = '20px';
+                	ts.style['background-color'] = 'yellow';
                	    if (sale > ' '){
                	    ts.innerHTML = sale;
                	    }
@@ -249,15 +254,21 @@
                 	tm.style.width = '18%';
                 	tm.style["line-height"] = "10px";
                 	tm.style["font-family"] = "Arial Black";
-                	tm.style["font-size"] = font.substring(1,3) +"px";
+          //      	tm.style["font-size"] = font.substring(1,3) +"px";
 	             	tm.innerHTML =  tm.innerHTML + " Model Year";
-	             	tsd.style.left = '43px';
+	    /*         	tsd.style.left = '43px';
                 	tsd.style.top = '928px';
                 	ts.style['line-height'] = '0px';
                 	ts.style.width = '22%';
                 	ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
-                	ts.style['min-height'] = '11px';
+                	ts.style['min-height'] = '11px';*/
+	            	tsd.style.left = '428px';
+                	tsd.style.top = '220px';
+                	ts.style['line-height'] = '8px';
+                	ts.style.width = '23%';
+                	ts.style['font-size'] = '20px';
+                	ts.style['background-color'] = 'red';
                 	    if (sale > ' '){
                 	    ts.innerHTML = sale;
                 	    }
@@ -282,13 +293,19 @@
                 	tm.style["writing-mode"] = "vertical-rl";
                 	tm.style["text-orientation"] = "upright";
                 	tm.style["font-size"] = "21px";
-                	tsd.style.left = '441px';
+       /*         	tsd.style.left = '441px';
                	    tsd.style.top = '385px';
                	    ts.style['line-height'] = '0px';
                	    ts.style.width = '22%';
                	    ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
-               	    ts.style['min-height'] = '15px';
+               	    ts.style['min-height'] = '15px'; */
+                	tsd.style.left = '428px';
+                	tsd.style.top = '225px';
+                	ts.style['line-height'] = '10px';
+                	ts.style.width = '22%';
+                	ts.style['font-size'] = '20px';
+                	ts.style['background-color'] = 'yellow';
                	    if (sale > ' '){
                	    ts.innerHTML = sale;
                	    }
@@ -311,13 +328,19 @@
                 	tm.style.width = '18%';
                 	tm.style["line-height"] = "10px";
                	    tm.innerHTML =  tm.innerHTML + " Model Year";
-               	    tsd.style.left = '441px';
+      /*       	    tsd.style.left = '441px';
                	    tsd.style.top = '571px';
                	    ts.style['line-height'] = '0px';
                	    ts.style.width = '22%';
                	    ts.style['font-size'] = '12px';
                	    ts.style['text-align'] = 'right';
-               	    ts.style['min-height'] = '15px';
+               	    ts.style['min-height'] = '15px'; */
+	               	tsd.style.left = '428px';
+	             	tsd.style.top = '225px';
+	             	ts.style['line-height'] = '10px';
+	             	ts.style.width = '22%';
+	             	ts.style['font-size'] = '20px';
+	             	ts.style['background-color'] = 'yellow';
                	    if (sale > ' '){
                	    ts.innerHTML = sale;
                	    }
@@ -343,13 +366,19 @@
                 	tm.style["font-family"] = "'Jura', sans-serif";
                 	tm.style["font-weight"] = "700";
                	    tm.innerHTML =  tm.innerHTML + " Model Year";
-              	    tsd.style.left = '441px';
+          /*    	    tsd.style.left = '441px';
                	    tsd.style.top = '404px';
                	    ts.style['line-height'] = '0px';
                	    ts.style.width = '22%';
                	    ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
-               	    ts.style['min-height'] = '15px';
+               	    ts.style['min-height'] = '15px'; */
+               	    tsd.style.left = '428px';
+	             	tsd.style.top = '225px';
+	             	ts.style['line-height'] = '10px';
+	             	ts.style.width = '22%';
+	             	ts.style['font-size'] = '20px';
+	             	ts.style['background-color'] = 'yellow';
                	    if (sale > ' '){
                	    ts.innerHTML = sale;
                	    }
@@ -388,6 +417,12 @@
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
         		    doc.setFontSize(11);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		    if (brnd == 'A11'){
@@ -408,11 +443,17 @@
         		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
         		    doc.setFontSize(10);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		    if (brnd == 'A14'){
     		    	thpl = 130;
-    		    	thpt = 65;
+    		    	thpt = 70;
     		    	tmpl = 130;
     		    	tmpt = 45;
     		    	tspl = 30;
@@ -424,6 +465,12 @@
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
         		    doc.setFontSize(8);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		    if (brnd == 'A15'){
@@ -444,6 +491,12 @@
         		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
         		    doc.setFontSize(9);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		    if (brnd == 'A16'){
@@ -461,6 +514,12 @@
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
         		    doc.setFontSize(9);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		    if (brnd == 'A18'){
@@ -478,6 +537,12 @@
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
         		    doc.setFontSize(9);
         		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        		    doc.setFillColor(255,255,0);
+        		    doc.rect(314, 127, 45, 25, 'F');
+        		    doc.setFontSize(20);
+        		    tspl = 317;
+    		    	tspt = 145;
+    		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
     		    
     		var fn = seris + ' ' + mrkt + ' ' + bmdl + ' ' + sequ + '.pdf';    
