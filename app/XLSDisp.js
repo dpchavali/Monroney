@@ -47,7 +47,8 @@ var changed = function(instance, cell, x, y, value, oldValue) {
       }
  //   alert(document.getElementById('table').jexcel.getStyle(x+y));
  //   $('#log').append('Cell ' + cellName + ' Value changed from ' + currdata1 + ' to: ' + value + '<br>');
-      if(value != true && value != false)
+ //   if(value != true && value != false)
+      if(cellName.substring(0,1) != 'M')	  
     	  {
 		      var head2 = document.getElementById('table').jexcel.getHeaders();
 		      var data2 = document.getElementById('table').jexcel.getData();
@@ -59,20 +60,30 @@ var changed = function(instance, cell, x, y, value, oldValue) {
 		      mySpreadsheet.setStyle(cellName, 'background-color', 'orange');
     	  }
       
-      if(value == true){
-    	  cboxarry.push(cellName);
-          mySpreadsheet.setStyle(cellName, 'background-color', 'orange');
-//          console.log(cboxarry);
-      }
-      if(value == false){
-    	  const index = cboxarry.indexOf(cellName);
-    	  if (index > -1) {
-    		  cboxarry.splice(index, 1);
-    	  }
- //         mySpreadsheet.setStyle(cellName, 'background-color', 'green');
-//	      console.log(cboxarry);
+      if(cellName.substring(0,1) == 'M'){
+	      if(value == true){
+	    	  cboxarry.push(cellName);
+	          mySpreadsheet.setStyle(cellName, 'background-color', 'orange');
+	//          console.log(cboxarry);
 	      }
-    }
+	      if(value == false){
+	    	  const index = cboxarry.indexOf(cellName);
+	    	  if (index > -1) {
+	    		  cboxarry.splice(index, 1);
+	    	  }
+	      }
+      }
+}
+
+var delrow = function(instance, row, x, y){
+	var head2 = document.getElementById('table').jexcel.getHeaders();
+    var data2 = document.getElementById('table').jexcel.getData();
+    var uri2 = $.csv.fromArrays(head2);
+    uri2 = uri2.replace(/(\r\n|\n|\r|")/gm,"");
+    uri2 = uri2 +"\n" + $.csv.fromArrays(data2);
+    $('#data1').text("");
+    $('#data1').text(uri2);
+}
 
 var mySpreadsheet = jexcel(document.getElementById('table'), {
 	csv:'/Monroney/uploadFiles/Shipping1.csv',
@@ -85,7 +96,7 @@ var mySpreadsheet = jexcel(document.getElementById('table'), {
     minDimensions:[12,40],
     allowInsertRow:true,
     allowInsertColumn:false,
-    allowDeleteRow:false,
+    allowDeleteRow:true,
     allowDeleteColumn:false,
     allowRenameColumn:false,
     about:false,
@@ -107,11 +118,12 @@ var mySpreadsheet = jexcel(document.getElementById('table'), {
         { type:'text', width:50,readOnly:true,},
         { type:'text', width:300},
         { type:'checkbox', title:'Create PDF', width:100},
+        {type:'checkbox', title:'Delete', width:50},
       ],
           
         onchange: changed,
         onselection: selectionActive,
-               
+        ondeleterow: delrow,
      /*   style: {
             A1:'background-color: orange;',
             B2:'background-color: orange;',
