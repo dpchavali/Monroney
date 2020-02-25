@@ -176,7 +176,7 @@
                 	td.style.left = '230px';
                 	td.style.top = '120px';
                 	th.style.width = '55%';
-                	th.style["line-height"] = "15px";
+                	th.style["line-height"] = "25px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
                 	tmd.style.left = '230px';
@@ -228,7 +228,7 @@
                 	tsd.style.left = '428px';
                 	tsd.style.top = '225px';
                 	ts.style['line-height'] = '10px';
-                	ts.style.width = '20%';
+                	ts.style.width = '23%';
                 	ts.style['font-size'] = '20px';
                 	ts.style['min-height'] = '20px';
                 	ts.style['background-color'] = 'yellow';
