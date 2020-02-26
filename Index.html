@@ -43,9 +43,17 @@
  <tr>
  <td align="center">
  <input type="button" id='upload' name="upload"  value="Upload New CSV"  class="btn btn-primary btn-xl" />
-  <input type="button" onClick="window.location.href = '/Monroney/XLSDisplay2.html';" value="Edit Existing CSV"  class="btn btn-primary btn-xl"/>
-  <input type="submit" id="transmit" name="transmit" value="Transmit CSV To ADDC"  class="btn btn-danger btn-xl" />  
-  <form method="post" id="ftpform" enctype="multipart/form-data"></form>
+ <input type="button" onClick="window.location.href = '/Monroney/XLSDisplay2.html';" value="Edit Existing CSV"  class="btn btn-primary btn-xl"/>
+  </td>
+  </tr>
+  <tr>
+  <td align='center'>
+ <!--   <form method="post" id="ftpform" enctype="multipart/form-data"> -->
+  <input type="submit" id="tranaddc" name="tranaddc" value="Transmit CSV To ADDC"  class="btn btn-danger btn-xl" />  
+  <input id="tranbldc" name="tranbldc" value="Transmit CSV To BLDC"  class="btn btn-danger btn-xl" />
+  <input type="submit" id="trandcdc" name="trandcdc" value="Transmit CSV To DCDC"  class="btn btn-danger btn-xl" />
+  <input type="submit" id="tranhpdc" name="tranhpdc" value="Transmit CSV To HPDC"  class="btn btn-danger btn-xl" />
+  <input type="submit" id="tranoddc" name="tranoddc" value="Transmit CSV To ODDC"  class="btn btn-danger btn-xl" />
   </td>
   </tr>
   </table>
