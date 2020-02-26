@@ -175,7 +175,8 @@
                 	imgsrc = 'images/JEEPB.jpeg';
                 	td.style.left = '230px';
                 	td.style.top = '120px';
-                	th.style.width = '55%';
+  //              	th.style.width = '55%';
+                	th.style.width = desc.length + '%';
                 	th.style["line-height"] = "25px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -207,7 +208,8 @@
                 	imgsrc = 'images/CHRYSLERB.jpeg';
                 	td.style.left = '470px';
                 	td.style.top = '111px';
-                	th.style.width = '43%';
+   //             	th.style.width = '43%';
+                	th.style.width = desc.length + '%';
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
                 	tmd.style.left = '425px';
@@ -244,7 +246,7 @@
                 	imgsrc = 'images/RAMB.jpeg';
                 	td.style.left = '174px';
                 	td.style.top = '125px';
-                	th.style.width = '56%';
+                	th.style.width = desc.length + '%';
                 	th.style["line-height"] = "20px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -281,7 +283,8 @@
                 	imgsrc = 'images/DODGEB.jpeg';
                 	td.style.left = '130px';
                 	td.style.top = '125px';
-                	th.style.width = '50%';
+     //           	th.style.width = '50%';
+                	th.style.width = desc.length + '%';
                 	th.style["line-height"] = "30px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -320,7 +323,8 @@
                 	td.style.top = '119px';
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
-                	th.style.width = '56%';
+     //           	th.style.width = '56%';
+                	th.style.width = desc.length + '%';
                 	th.style["line-height"] = "15px";
                 	tmd.style.right = '0px';
                 	tmd.style.left = '200px';
@@ -353,7 +357,8 @@
                 	imgsrc = 'images/ALFAB.jpeg';
                 	td.style.left = '200px';
                 	td.style.top = '121px';
-                	th.style.width = '49%';
+ //               	th.style.width = '49%';
+                	th.style.width = desc.length + '%';
                 	th.style["line-height"] = "15px";
                 	th.style["font-family"] = "'Jura', sans-serif";
                 	th.style["font-weight"] = "700";
