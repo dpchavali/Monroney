@@ -25,25 +25,84 @@ $(document).ready(function(evt) {
 
     });
     
-    $('#transmit').click(function(evt) {
+   $('#tranaddc').click(function(evt) {
     	evt.preventDefault();
         $.ajax({
         	  url: "FileFTP",
-        	  data: new FormData($('#ftpform')[0]),
-        	  cache: false,
-              contentType: false,
-              processData: false,
-              type: 'POST',
+        	  data:{ button1: "addc"},
+        	  type: 'POST',
         	  success: function(){
-        	      alert("File FTP Successfull");
+        	      alert("ADDC File FTP Successfull");
         	  },
         	  error:function(){
-        	      alert("File FTP Falied");
+        	      alert("ADDC File FTP Falied");
         	  }   
         	}); 
-
     });
+    
+    $('#tranbldc').click(function(evt) {
+    	evt.preventDefault();
+        $.ajax({
+        	  url: "FileFTP",
+              type: 'post',
+        	  data:{ button1: "bldc"},
+        	  success: function(){
+        	      alert("BLDC File FTP Successfull");
+        	  },
+        	  error:function(){
+        	      alert("BLDC File FTP Falied");
+        	  }   
+        	}); 
+    });
+    
+    $('#trandcdc').click(function(evt) {
+    	evt.preventDefault();
+        $.ajax({
+        	  url: "FileFTP",
+              type: 'post',
+        	  data:{ button1: "dcdc"},
+        	  success: function(){
+        	      alert("DCDC File FTP Successfull");
+        	  },
+        	  error:function(){
+        	      alert("DCDC File FTP Falied");
+        	  }   
+        	}); 
+    });
+    
+    $('#tranhpdc').click(function(evt) {
+    	evt.preventDefault();
+        $.ajax({
+        	  url: "FileFTP",
+              type: 'post',
+        	  data:{ button1: "hpdc"},
+        	  success: function(){
+        	      alert("HPDC File FTP Successfull");
+        	  },
+        	  error:function(){
+        	      alert("HPDC File FTP Falied");
+        	  }   
+        	}); 
+    });
+    
+    $('#tranoddc').click(function(evt) {
+    	evt.preventDefault();
+        $.ajax({
+        	  url: "FileFTP",
+              type: 'post',
+        	  data:{ button1: "oddc"},
+        	  success: function(){
+        	      alert("ODDC File FTP Successfull");
+        	  },
+        	  error:function(){
+        	      alert("ODDC File FTP Falied");
+        	  }   
+        	}); 
+    });
+
 });
+
+
 
 function checkfile(sender) {
     var validExts = new Array(".CSV", ".csv");
