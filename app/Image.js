@@ -1,4 +1,5 @@
 	  var brnd, desc, desc2, font, spcl, frmt, seris, sale, fdesc, mrkt, bmdl, sequ;
+	  var desclen = 0;
 	  function startup() {
             	  var url = document.location.href,params, data = {}, tmp;
             	  params = url.split('?')[1].split('&');
@@ -165,19 +166,24 @@
               else {
             	  th.innerHTML = unescape(desc);
               }
-              th.style["font-size"] = "29px";
+                th.style["font-size"] = "29px";
                 var td = document.getElementById('txtdiv');
                 var canvas = document.getElementById('canvas');
                 var ctx = canvas.getContext('2d');
                 var img = new Image();
                 var imgsrc;
+                desclen = desc.length + desc2.length;
                 if ( brnd == 'A08'){
                 	imgsrc = 'images/JEEPB.jpeg';
                 	td.style.left = '230px';
                 	td.style.top = '120px';
   //              	th.style.width = '55%';
-                	th.style.width = desc.length + '%';
-                	th.style["line-height"] = "25px";
+                	if(desclen > 45){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '45%';}
+                	th.style["line-height"] = "31px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
                 	tmd.style.left = '230px';
@@ -188,19 +194,19 @@
                 	tm.style["font-family"] = "Arial Black";
                 	tm.style["font-size"] = "22px";
                  	tm.innerHTML =  tm.innerHTML + " Model Year";
-                	tsd.style.left = '428px';
-                	tsd.style.top = '225px';
-                	ts.style['line-height'] = '10px';
-                	ts.style.width = '23%';
-                	ts.style['font-size'] = '20px';
-               	  //  ts.style['text-align'] = 'bottom';
-                	ts.style['min-height'] = '20px';
+                	tsd.style.left = '380px';
+                	tsd.style.top = '230px';
+                	ts.style['line-height'] = '6px';
+                	ts.style.width = '58%';
+                	ts.style['font-size'] = '12px';
+                	ts.style['min-height'] = '8px';
                 	ts.style['background-color'] = 'yellow';
                 	    if (sale > ' '){
-                	    ts.innerHTML = sale;
+                	    ts.innerHTML = bmdl +'   ' + sale;
                 	    }
                 	    else{
-               	        ts.style['display']='none';
+                	    ts.style.width = '40%';	
+                	    ts.innerHTML = bmdl;	
                 	    } 
                  }
                 
@@ -209,7 +215,11 @@
                 	td.style.left = '470px';
                 	td.style.top = '111px';
    //             	th.style.width = '43%';
-                	th.style.width = desc.length + '%';
+                	if(desclen > 49){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '43%';}
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
                 	tmd.style.left = '425px';
@@ -246,7 +256,11 @@
                 	imgsrc = 'images/RAMB.jpeg';
                 	td.style.left = '174px';
                 	td.style.top = '125px';
-                	th.style.width = desc.length + '%';
+                	if(desclen > 45){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '45%';}
                 	th.style["line-height"] = "20px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -284,7 +298,11 @@
                 	td.style.left = '130px';
                 	td.style.top = '125px';
      //           	th.style.width = '50%';
-                	th.style.width = desc.length + '%';
+                	if(desclen > 45){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '45%';}
                 	th.style["line-height"] = "30px";
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -324,7 +342,11 @@
                 	th.style["font-family"] = "Arial Black";
                 	th.style["font-size"] = font.substring(1,3) +"px";
      //           	th.style.width = '56%';
-                	th.style.width = desc.length + '%';
+                	if(desclen > 45){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '45%';}
                 	th.style["line-height"] = "15px";
                 	tmd.style.right = '0px';
                 	tmd.style.left = '200px';
@@ -358,7 +380,11 @@
                 	td.style.left = '200px';
                 	td.style.top = '121px';
  //               	th.style.width = '49%';
-                	th.style.width = desc.length + '%';
+                	if(desclen > 45){
+                    	th.style.width = desclen + '%';
+                    	}
+                    	else
+                    		{th.style.width = '45%';}
                 	th.style["line-height"] = "15px";
                 	th.style["font-family"] = "'Jura', sans-serif";
                 	th.style["font-weight"] = "700";
