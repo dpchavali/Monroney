@@ -196,7 +196,7 @@
                  	tm.innerHTML =  tm.innerHTML + " Model Year";
                 	tsd.style.left = '380px';
                 	tsd.style.top = '230px';
-                	ts.style['line-height'] = '6px';
+                	ts.style['line-height'] = '2px';
                 	ts.style.width = '58%';
                 	ts.style['font-size'] = '12px';
                 	ts.style['min-height'] = '8px';
@@ -237,19 +237,20 @@
                	    ts.style['font-size'] = '12px';
                	    ts.style['text-align'] = 'right';
                	    ts.style['min-height'] = '15px'; */
-                	tsd.style.left = '428px';
-                	tsd.style.top = '225px';
-                	ts.style['line-height'] = '10px';
-                	ts.style.width = '23%';
-                	ts.style['font-size'] = '20px';
-                	ts.style['min-height'] = '20px';
+                	tsd.style.left = '380px';
+                	tsd.style.top = '230px';
+                	ts.style['line-height'] = '2px';
+                	ts.style.width = '65%';
+                	ts.style['font-size'] = '12px';
+                	ts.style['min-height'] = '8px';
                 	ts.style['background-color'] = 'yellow';
-               	    if (sale > ' '){
-               	    ts.innerHTML = sale;
-               	    }
-               	    else{
-               	    ts.style['display']='none';
-               	    }
+                	    if (sale > ' '){
+                	    ts.innerHTML = bmdl +'   ' + sale;
+                	    }
+                	    else{
+                	    ts.style.width = '40%';	
+                	    ts.innerHTML = bmdl;	
+                	    } 
                 }
                 
                 if ( brnd == 'A14'){
@@ -279,18 +280,20 @@
                 	ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
                 	ts.style['min-height'] = '11px';*/
-	            	tsd.style.left = '428px';
-                	tsd.style.top = '220px';
-                	ts.style['line-height'] = '8px';
-                	ts.style.width = '23%';
-                	ts.style['font-size'] = '20px';
-                	ts.style['background-color'] = 'red';
+	             	tsd.style.left = '380px';
+                	tsd.style.top = '230px';
+                	ts.style['line-height'] = '2px';
+                	ts.style.width = '65%';
+                	ts.style['font-size'] = '12px';
+                	ts.style['min-height'] = '8px';
+                	ts.style['background-color'] = 'yellow';
                 	    if (sale > ' '){
-                	    ts.innerHTML = sale;
+                	    ts.innerHTML = bmdl +'   ' + sale;
                 	    }
                 	    else{
-               	        ts.style['display']='none';
-                	    }
+                	    ts.style.width = '40%';	
+                	    ts.innerHTML = bmdl;	
+                	    } 
                 }
                 
                 if ( brnd == 'A15'){
@@ -321,18 +324,20 @@
                	    ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
                	    ts.style['min-height'] = '15px'; */
-                	tsd.style.left = '428px';
-                	tsd.style.top = '225px';
-                	ts.style['line-height'] = '10px';
-                	ts.style.width = '22%';
-                	ts.style['font-size'] = '20px';
+                	tsd.style.left = '380px';
+                	tsd.style.top = '230px';
+                	ts.style['line-height'] = '2px';
+                	ts.style.width = '65%';
+                	ts.style['font-size'] = '12px';
+                	ts.style['min-height'] = '8px';
                 	ts.style['background-color'] = 'yellow';
-               	    if (sale > ' '){
-               	    ts.innerHTML = sale;
-               	    }
-               	    else{
-               	    ts.style['display']='none';
-               	    }
+                	    if (sale > ' '){
+                	    ts.innerHTML = bmdl +'   ' + sale;
+                	    }
+                	    else{
+                	    ts.style.width = '40%';	
+                	    ts.innerHTML = bmdl;	
+                	    } 
                 }
                 
                 if ( brnd == 'A16'){
@@ -361,31 +366,33 @@
                	    ts.style['font-size'] = '12px';
                	    ts.style['text-align'] = 'right';
                	    ts.style['min-height'] = '15px'; */
-	               	tsd.style.left = '428px';
-	             	tsd.style.top = '225px';
-	             	ts.style['line-height'] = '10px';
-	             	ts.style.width = '22%';
-	             	ts.style['font-size'] = '20px';
+	               	tsd.style.left = '380px';
+	             	tsd.style.top = '230px';
+	             	ts.style['line-height'] = '2px';
+	             	ts.style.width = '65%';
+	             	ts.style['font-size'] = '12px';
+	             	ts.style['min-height'] = '8px';
 	             	ts.style['background-color'] = 'yellow';
-               	    if (sale > ' '){
-               	    ts.innerHTML = sale;
-               	    }
-               	    else{
-               	    ts.style['display']='none';
-               	    }
+	             	    if (sale > ' '){
+	             	    ts.innerHTML = bmdl +'   ' + sale;
+	             	    }
+	             	    else{
+	             	    ts.style.width = '40%';	
+	             	    ts.innerHTML = bmdl;	
+	             	    } 
                 }
                 
                 if ( brnd == 'A18'){
                 	imgsrc = 'images/ALFAB.jpeg';
                 	td.style.left = '200px';
-                	td.style.top = '121px';
+                	td.style.top = '111px';
  //               	th.style.width = '49%';
                 	if(desclen > 45){
                     	th.style.width = desclen + '%';
                     	}
                     	else
                     		{th.style.width = '45%';}
-                	th.style["line-height"] = "15px";
+                	th.style["line-height"] = "21px";
                 	th.style["font-family"] = "'Jura', sans-serif";
                 	th.style["font-weight"] = "700";
                 	th.style["font-size"] = font.substring(1,3) +"px";
@@ -404,18 +411,20 @@
                	    ts.style['font-size'] = '11px';
                	    ts.style['text-align'] = 'right';
                	    ts.style['min-height'] = '15px'; */
-               	    tsd.style.left = '428px';
-	             	tsd.style.top = '225px';
-	             	ts.style['line-height'] = '10px';
-	             	ts.style.width = '22%';
-	             	ts.style['font-size'] = '20px';
+	              	tsd.style.left = '380px';
+	             	tsd.style.top = '230px';
+	             	ts.style['line-height'] = '2px';
+	             	ts.style.width = '65%';
+	             	ts.style['font-size'] = '12px';
+	             	ts.style['min-height'] = '8px';
 	             	ts.style['background-color'] = 'yellow';
-               	    if (sale > ' '){
-               	    ts.innerHTML = sale;
-               	    }
-               	    else{
-               	    ts.style['display']='none';
-               	    }
+	             	    if (sale > ' '){
+	             	    ts.innerHTML = bmdl +'   ' + sale;
+	             	    }
+	             	    else{
+	             	    ts.style.width = '40%';	
+	             	    ts.innerHTML = bmdl;	
+	             	    } 
                 }
                 
                  img.src = imgsrc;
@@ -446,12 +455,12 @@
         		    doc.text(document.getElementById('head').value, thpl, thpt);
         		    doc.setFontSize(22);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-        		    doc.setFontSize(11);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+    //    		    doc.setFontSize(11);
+    //    		    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
@@ -472,12 +481,12 @@
         		    doc.text(document.getElementById('mody').value.substring(1,2), tmpl, tmpt+15);
         		    doc.text(document.getElementById('mody').value.substring(2,3), tmpl, tmpt+30);
         		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
-        		    doc.setFontSize(10);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+   //     		    doc.setFontSize(10);
+   //     		    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
@@ -494,12 +503,12 @@
         		    doc.setFontSize(font.substring(1,3));
         		    doc.text(document.getElementById('head').value, thpl, thpt);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-        		    doc.setFontSize(8);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+//        		    doc.setFontSize(8);
+//        		    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
@@ -520,12 +529,12 @@
         		    doc.text(document.getElementById('mody').value.substring(1,2), tmpl, tmpt+15);
         		    doc.text(document.getElementById('mody').value.substring(2,3), tmpl, tmpt+30);
         		    doc.text(document.getElementById('mody').value.substring(3,4), tmpl, tmpt+45);
-        		    doc.setFontSize(9);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+    //    		    doc.setFontSize(9);
+    //    		    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
@@ -543,12 +552,12 @@
         		    doc.text(document.getElementById('head').value, thpl, thpt);
         		    doc.setFontSize(20);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-        		    doc.setFontSize(9);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+   //     		    doc.setFontSize(9);
+   //     		    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
@@ -566,12 +575,12 @@
         		    doc.text(document.getElementById('head').value, thpl, thpt);
         		    doc.setFontSize(20);
         		    doc.text(document.getElementById('mody').value, tmpl, tmpt);
-        		    doc.setFontSize(9);
-        		    doc.text(document.getElementById('sales').value,tspl,tspt);
+        	//	    doc.setFontSize(9);
+        	//	    doc.text(document.getElementById('sales').value,tspl,tspt);
         		    doc.setFillColor(255,255,0);
-        		    doc.rect(314, 127, 45, 25, 'F');
-        		    doc.setFontSize(20);
-        		    tspl = 317;
+        		    doc.rect(277, 135, 72, 15, 'F');
+        		    doc.setFontSize(10);
+        		    tspl = 278;
     		    	tspt = 145;
     		    	doc.text(document.getElementById('sales').value,tspl,tspt);
     		    }
